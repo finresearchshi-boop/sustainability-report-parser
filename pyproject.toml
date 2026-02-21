@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sustain-parser"
+version = "0.1.0"
+description = "Teaching repo: parse sustainability report PDFs into a section tree + per-section text."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pymupdf>=1.23",
+  "typer>=0.12",
+  "rich>=13.7",
+  "pydantic>=2.6",
+]
+
+[project.scripts]
+sustain-parse = "sustain_parser.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sustain_parser*"]
